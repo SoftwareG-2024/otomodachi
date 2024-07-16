@@ -9,3 +9,7 @@
 *.png
 *.jpg
 *.svg
+
+#メモは無視
+.txt
+.drawio
