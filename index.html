@@ -1,18 +1,28 @@
 <!DOCTYPE html>
-<html>
+<html lang="ja">
 
 <head>
-    <title>Index Page</title>
-    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <meta charset="UTF-8">
+    <title>家計簿アプリ</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
-    <main class="main">
-        <h1 class="title">Welcome to the Index Page</h1>
-        <p class="description">Click the buttons below to navigate to different pages:</p>
-        <button onclick="window.location.href='save_data.html';" class="button">データを入力する</button>
-        <button onclick="window.location.href='display.html';" class="button">データを見る</button>
-    </main>
+    <h1>家計簿アプリ</h1>
+    <form id="expense-form">
+        <label for="date">日付:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="category">カテゴリー:</label>
+        <input type="text" id="category" name="category" required><br>
+        <label for="amount">金額:</label>
+        <input type="number" id="amount" name="amount" required><br>
+        <label for="description">説明:</label>
+        <input type="text" id="description" name="description"><br>
+        <button type="submit">追加</button>
+    </form>
+    <div id="expenses"></div>
+    <a href="view_expenses.php">データを表示</a>
+    <script src="script.js"></script>
 </body>
 
 </html>
