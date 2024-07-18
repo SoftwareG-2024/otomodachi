@@ -1,6 +1,6 @@
 <?php
 // XMLファイルのパスのパターン
-$pattern = "../data/*_data.xml";
+$pattern = "../data/new_data.xml";
 
 // パターンに一致するファイル名を取得
 $files = glob($pattern);

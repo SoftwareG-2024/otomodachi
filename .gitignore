@@ -6,3 +6,7 @@
 *.png
 *.jpg
 *.svg
+
+#メモの無視
+*.drawio
+*txt

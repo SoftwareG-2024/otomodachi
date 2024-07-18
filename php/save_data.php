@@ -6,12 +6,12 @@ $data = json_decode($_POST['data'], true);
 $dom = new DOMDocument('1.0', 'UTF-8');
 
 // 日付から年と月を抽出
-$date = new DateTime($data['date']);
-$year = $date->format('Y');
-$month = $date->format('m');
+// $date = new DateTime($data['date']);
+// $year = $date->format('Y');
+// $month = $date->format('m');
 
 // XMLファイルのパス（階層が一つ上）
-$file = "../data/{$year}_{$month}_data.xml";
+$file = "../data/new_data.xml";
 
 // XMLファイルが存在する場合、ファイルをロード
 if (file_exists($file)) {
@@ -35,5 +35,5 @@ $root->appendChild($newData);
 $dom->formatOutput = true;
 
 // 整形したXMLを保存（階層が一つ上）
-$dom->save("../data/{$year}_{$month}_data.xml");
+$dom->save("../data/{new_data.xml");
 ?>
