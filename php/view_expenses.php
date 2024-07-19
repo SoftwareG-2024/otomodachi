@@ -18,4 +18,7 @@ while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
 }
 
 echo "</table>";
+
+echo "<a href='../index.html'>ホームへ戻る</a>";
+echo "<a href='../input.html'>データを入力する</a>";
 ?>

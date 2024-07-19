@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <title>家計簿アプリ</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/index.css">
+</head>
+
+<body>
+    <h1>家計簿アプリ</h1>
+    <form id="expense-form">
+        <label for="date">日付:</label>
+        <input type="date" id="date" name="date" required><br>
+        <label for="category">カテゴリー:</label>
+        <input type="text" id="category" name="category" required><br>
+        <label for="amount">金額:</label>
+        <input type="number" min="1" max="10000000" id="amount" name="amount" required><br>
+        <label for="description">説明:</label>
+        <input type="text" id="description" name="description"><br>
+        <button type="submit">追加</button>
+    </form>
+    <div id="expenses"></div>
+    <a href="php/view_expenses.php">データを表示</a>
+    <script src="js/script.js"></script>
+
+    <button onclick="window.location.href='index.html';" class="button">ホームへ戻る</button>
+    <button onclick="window.location.href='php/view_expenses.php';" class="button">データを見る</button>
+</body>
+
+</html>
