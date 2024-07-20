@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>家計簿アプリ</title>
+    <title>データ入力</title>
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="css/data_entry.css">
 </head>

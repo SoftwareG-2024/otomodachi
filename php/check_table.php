@@ -1,5 +1,5 @@
 <?php
-$db = new SQLite3('budget.db');
+$db = new SQLite3('../data/budget.db');
 
 $result = $db->query("SELECT name FROM sqlite_master WHERE type='table' AND name='expenses'");
 

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <meta charset="UTF-8">
+    <title>データ表示</title>
     <link rel="stylesheet" type="text/css" href="css/data_display.css">
 </head>
 <body>
     <?php
-    $db = new SQLite3('budget.db');
+    $db = new SQLite3('data/budget.db');
 
     $result = $db->query("SELECT * FROM expenses ORDER BY date DESC");
 

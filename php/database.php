@@ -1,6 +1,6 @@
 <?php
 try {
-    $db = new SQLite3('budget.db');
+    $db = new SQLite3('../data/budget.db');
     $db->exec("CREATE TABLE IF NOT EXISTS expenses (
         id INTEGER PRIMARY KEY,
         date TEXT,

@@ -1,6 +1,6 @@
 <?php
 try {
-    $db = new SQLite3('budget.db');
+    $db = new SQLite3('../data/budget.db');
 } catch (Exception $e) {
     echo "エラー: " . $e->getMessage();
 }
