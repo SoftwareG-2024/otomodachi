@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <title>家計簿アプリ</title>
     <link rel="stylesheet" href="css/styles.css">
-    <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/data_entry.css">
 </head>
 
 <body>
     <h1>家計簿アプリ</h1>
     <form id="expense-form" method="post" action="php/data_entry.php">
         <label for="date">日付:</label>
-        <input type="date" id="date" name="date" required><br>
+        <input type="date" id="date" name="date" value="<?php echo date('Y-m-j');?>" required><br>
         <select id="item" name="item" class="input">
             <option value="0">支出</option>
             <option value="1">収入</option>
@@ -27,11 +27,11 @@
     </form>
 
     <div id="expenses"></div>
-    <a href="php/data_display.php">データを表示</a>
+    <!-- <a href="page_display.php">データを表示</a> -->
     <script src="js/script.js"></script>
 
     <button onclick="window.location.href='index.html';" class="button">ホームへ戻る</button>
-    <button onclick="window.location.href='php/data_display.php';" class="button">データを見る</button>
+    <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
 </body>
 
 </html>

@@ -1,48 +1,80 @@
 body {
     font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
     background-color: #f0f0f0;
-    padding: 20px;
 }
 
-.title {
+h1 {
     color: #333;
     text-align: center;
+    padding: 20px 0;
 }
 
-.table {
-    width: 100%;
+table {
+    width: 80%;
+    margin: 0 auto;
     border-collapse: collapse;
 }
 
-.table th,
-.table td {
+table,
+th,
+td {
     border: 1px solid #ddd;
     padding: 8px;
 }
 
-.table tr:nth-child(even) {
-    background-color: #f2f2f2;
-}
-
-.table th {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    text-align: left;
+th {
     background-color: #4CAF50;
     color: white;
 }
 
-.button {
-    background-color: #008CBA;
-    /* Blue */
-    border: none;
-    color: white;
-    padding: 15px 32px;
-    text-align: center;
-    text-decoration: none;
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+.income {
+    color: green;
+}
+
+.expense {
+    color: red;
+}
+
+.amount {
+    text-align: right;
+}
+
+.id {
+    width: 1em;
+}
+
+.date {
+    width: 3em;
+}
+
+.item {
+    width: 5em;
+}
+
+.category {
+    width: 4em;
+}
+
+.amount {
+    width: 4em;
+}
+
+.description {
+    width: 20em;
+}
+
+a {
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 5px;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-decoration: none;
+    text-align: center;
 }
