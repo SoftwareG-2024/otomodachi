@@ -2,7 +2,7 @@ document.getElementById('expense-form').addEventListener('submit', function (eve
     event.preventDefault();
 
     const formData = new FormData(event.target);
-    fetch('../php/add_expense.php', {
+    fetch('../php/data_entry.php', {
         method: 'POST',
         body: formData
     })

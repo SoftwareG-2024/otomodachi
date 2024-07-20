@@ -8,4 +8,5 @@ if ($result->fetchArray()) {
 } else {
     echo "テーブル 'expenses' が存在しません";
 }
+echo "<a href='../index.html'>back</a>";
 ?>
