@@ -12,18 +12,21 @@
 <body>
     <main class="main">
         <h1>家計簿アプリ</h1>
-        <form action="php/database.php" method="post">
-            <input type="submit" value="Create Database" />
-        </form>
-        <form action="php/check_table.php" method="post">
-            <input type="submit" value="Check Table" />
-        </form>
-        <form action="php/count.php" method="post">
-            <input type="submit" value="count" />
-        </form>
-
-        <button onclick="window.location.href='page_entry.php';" class="button">データを入力する</button>
-        <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
+        <div class="button-group"> <!-- Add this -->
+            <form action="php/database.php" method="post">
+                <input type="submit" value="Create Database" />
+            </form>
+            <form action="php/check_table.php" method="post">
+                <input type="submit" value="Check Table" />
+            </form>
+            <form action="php/count.php" method="post">
+                <input type="submit" value="count" />
+            </form>
+        </div> <!-- Add this -->
+        <div class="button-group"> <!-- Add this -->
+            <button onclick="window.location.href='page_entry.php';" class="button">データを入力する</button>
+            <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
+        </div> <!-- Add this -->
     </main>
 </body>
 

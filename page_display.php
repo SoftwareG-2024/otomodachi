@@ -6,12 +6,13 @@
     <link rel="stylesheet" type="text/css" href="css/data_display.css">
 </head>
 <body>
+    <h1>家計簿データ</h1>
+
     <?php
     $db = new SQLite3('data/budget.db');
 
     $result = $db->query("SELECT * FROM expenses ORDER BY date DESC");
 
-    echo "<h1>家計簿データ</h1>";
     echo "<table>";
     echo "<tr><th>ID</th><th>日付</th><th>収支</th><th>カテゴリー</th><th>金額</th><th>説明</th></tr>";
 
@@ -33,10 +34,11 @@
     }
 
     echo "</table>";
-
-    echo "<a href='index.html'>ホームへ戻る</a>";
-    echo "<br>";
-    echo "<a href='page_entry.php'>データを入力する</a>";
     ?>
+
+    <div class='link'>
+        <a href='page_entry.php'>データを入力する</a>
+        <a href='index.html'>ホームへ戻る</a>
+    </div>
 </body>
 </html>

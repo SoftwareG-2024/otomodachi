@@ -19,7 +19,7 @@ form {
 
 form label {
     display: block;
-    margin: 10px 0;
+    margin-top: 10px;
 }
 
 form input[type="text"],
@@ -30,12 +30,14 @@ form select {
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 5px;
+    box-sizing: border-box;
 }
 
 form button {
     display: block;
     width: 100%;
     padding: 10px;
+    margin-top: 20px;
     background-color: #4CAF50;
     color: white;
     border: none;
