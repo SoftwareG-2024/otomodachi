@@ -31,8 +31,11 @@
     <!-- <a href="page_display.php">データを表示</a> -->
     <script src="js/script.js"></script>
 
-    <button onclick="window.location.href='index.html';" class="button">ホームへ戻る</button>
-    <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
+    <div class="button-group">
+        <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
+        <button onclick="window.location.href='index.html';" class="button">ホームへ戻る</button>
+    </div>
+
 </body>
 
 </html>

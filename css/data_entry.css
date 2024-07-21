@@ -67,3 +67,16 @@ form button:hover {
 .button:hover {
     background-color: #45a049;
 }
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 80%;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+button.button {
+    margin: 5px;
+}
