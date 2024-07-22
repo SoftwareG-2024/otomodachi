@@ -12,6 +12,10 @@
     $db = new SQLite3('data/budget.db');
 
     $result = $db->query("SELECT * FROM expenses ORDER BY date DESC");
+    // $results = $db->query("
+    //     SELECT STRFTIME('%Y-%m', date)
+    //     GROUP BY STRFTIME('%Y-%m', date)
+    // ");
 
     echo "<table>";
     echo "<tr><th>ID</th><th>日付</th><th>収支</th><th>カテゴリー</th><th>金額</th><th>説明</th></tr>";
