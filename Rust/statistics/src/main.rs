@@ -52,7 +52,17 @@ fn main() -> Result<()> {
         params![],
     )?;
     for (month, (total, income, other)) in totals {
-        conn_stats.execute("INSERT INTO stats (month, total, income, other) VALUES (?1, ?2, ?3, ?4)", params![month, total, income, other])?;
+        // Check if the month already exists in the database
+        let mut stmt = conn_stats.prepare("SELECT * FROM stats WHERE month = ?1")?;
+        let mut rows = stmt.query(params![month])?;
+
+        if let Some(_) = rows.next()? {
+            // If the month exists, update the row
+            conn_stats.execute("UPDATE stats SET total = ?2, income = ?3, other = ?4 WHERE month = ?1", params![month, total, income, other])?;
+        } else {
+            // If the month does not exist, insert a new row
+            conn_stats.execute("INSERT INTO stats (month, total, income, other) VALUES (?1, ?2, ?3, ?4)", params![month, total, income, other])?;
+        }
     }
 
     Ok(())
