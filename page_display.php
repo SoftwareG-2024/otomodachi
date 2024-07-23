@@ -17,6 +17,26 @@
     </form>
 
     <?php
+    if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+        $output = null;
+        $retval = null;
+        $command = 'C:\Users\terin\Documents\14_Kcct24\Software\otomodachi\Rust\statistics\target\release\statistics.exe 2>&1';
+        $output = system($command, $retval);
+        echo "Returned with status $retval and output:\n";
+        echo "<pre>";
+        print_r($output);
+        echo "</pre>";
+    } else {
+        echo '<form method="post">';
+        echo '<button type="submit">実行</button>';
+        echo '</form>';
+    }
+    ?>
+
+
+
+    <?php
+
     // データベースに接続します
     $db = new SQLite3('data/budget.db');
 

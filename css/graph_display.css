@@ -1,0 +1,27 @@
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    width: 60%;
+    margin: 0 auto;
+}
+
+button {
+    flex: 1;
+    margin: 5px;
+    padding: 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    border-radius: 15px;
+    margin: auto;
+    display: block;
+    width: 100%;
+}

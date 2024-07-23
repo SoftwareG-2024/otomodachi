@@ -21,7 +21,7 @@
         <label for="category">カテゴリー:</label>
             <input type="text" id="category" name="category" required><br>
         <label for="amount">金額:</label>
-            <input type="number" min="1" max="10000000" id="amount" name="amount" required><br>
+            <input type="number" min="1" max="10000000" step="1" id="amount" name="amount" required><br>
         <label for="description">説明:</label>
             <input type="text" id="description" name="description"><br>
         <button type="submit">追加</button>
