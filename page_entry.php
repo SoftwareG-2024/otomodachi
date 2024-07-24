@@ -32,7 +32,7 @@
     <script src="js/script.js"></script>
 
     <div class="button-group">
-        <button onclick="window.location.href='page_display.php';" class="button">データを見る</button>
+        <button onclick="window.location.href='display/page_display.php';" class="button">データを見る</button>
         <button onclick="window.location.href='index.html';" class="button">ホームへ戻る</button>
     </div>
 

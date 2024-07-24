@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>データ表示</title>
     <link rel="stylesheet" type="text/css" href="../css/data_display.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>家計簿データ</h1>
@@ -18,7 +19,6 @@
 
     <?php
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-        // statistics/test.php を実行
         $output = null;
         $retval = null;
         $command = 'display.exe 2>&1';
@@ -36,23 +36,18 @@
     ?>
 
     <?php
-    // データベースに接続します
     $db = new SQLite3('../data/budget.db');
 
-    // フォームから送信された年と月を取得します
     $year = isset($_POST['year']) ? $_POST['year'] : date('Y');
     $month = isset($_POST['month']) ? str_pad($_POST['month'], 2, '0', STR_PAD_LEFT) : date('m');
 
-    // SQLクエリを更新して、指定した年と月のデータだけを取得します
     $result = $db->query("SELECT * FROM expenses WHERE strftime('%Y', date) = '$year' AND strftime('%m', date) = '$month' ORDER BY date DESC");
 
-    // データの数を数えます
     $numRows = 0;
     while ($row = $result->fetchArray(SQLITE3_ASSOC)) {
         $numRows++;
     }
 
-    // データが0の場合はメッセージを表示します
     if ($numRows == 0) {
         echo "<p>指定した年月のデータはありません。</p>";
     } else {
@@ -78,6 +73,47 @@
         echo "</table>";
     }
     ?>
+
+    <div class="button-group">
+        <button id="loadData" class="button">データを読み込む</button>
+    </div>
+
+    <canvas id="myChart"></canvas>
+    <script>
+        fetch('../php/get_data.php')
+            .then(response => response.json())
+            .then(data => {
+                const ctx = document.getElementById('myChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: data.map(row => row.month),
+                        datasets: [{
+                            label: 'Total',
+                            data: data.map(row => row.total),
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            borderWidth: 1
+                        }, {
+                            label: 'Income',
+                            data: data.map(row => row.income),
+                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
+                            borderColor: 'rgba(153, 102, 255, 1)',
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="../js/graph_display.js"></script>
 
     <div class='link'>
         <a href='../page_entry.php'>データを入力する</a>
