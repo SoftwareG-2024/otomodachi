@@ -89,3 +89,30 @@ a {
 a:hover {
     background-color: #45a049;
 }
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.button:hover {
+    background-color: #45a049;
+}
+
+canvas {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    height: 30em;
+}

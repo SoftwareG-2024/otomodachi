@@ -51,6 +51,7 @@
     if ($numRows == 0) {
         echo "<p>指定した年月のデータはありません。</p>";
     } else {
+        echo "<h2>" . $year . "年" . $month . "月のデータ</h2>" ;
         echo "<table>";
         echo "<tr><th>ID</th><th>日付</th><th>収支</th><th>カテゴリー</th><th>金額</th><th>説明</th></tr>";
 
@@ -74,46 +75,9 @@
     }
     ?>
 
-    <div class="button-group">
-        <button id="loadData" class="button">データを読み込む</button>
-    </div>
-
     <canvas id="myChart"></canvas>
-    <script>
-        fetch('../php/get_data.php')
-            .then(response => response.json())
-            .then(data => {
-                const ctx = document.getElementById('myChart').getContext('2d');
-                new Chart(ctx, {
-                    type: 'bar',
-                    data: {
-                        labels: data.map(row => row.month),
-                        datasets: [{
-                            label: 'Total',
-                            data: data.map(row => row.total),
-                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
-                            borderColor: 'rgba(75, 192, 192, 1)',
-                            borderWidth: 1
-                        }, {
-                            label: 'Income',
-                            data: data.map(row => row.income),
-                            backgroundColor: 'rgba(153, 102, 255, 0.2)',
-                            borderColor: 'rgba(153, 102, 255, 1)',
-                            borderWidth: 1
-                        }]
-                    },
-                    options: {
-                        scales: {
-                            y: {
-                                beginAtZero: true
-                            }
-                        }
-                    }
-                });
-            });
-    </script>
+    <script src="../js/graph.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="../js/graph_display.js"></script>
 
     <div class='link'>
         <a href='../page_entry.php'>データを入力する</a>
