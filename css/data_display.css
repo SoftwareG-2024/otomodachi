@@ -54,3 +54,17 @@ canvas {
     width: 80%;
     height: 30em;
 }
+
+.income {
+    background-color: #d4edda;
+    /* 緑色の背景 */
+    color: #155724;
+    /* 緑色の文字 */
+}
+
+.expense {
+    background-color: #f8d7da;
+    /* 赤色の背景 */
+    color: #721c24;
+    /* 赤色の文字 */
+}

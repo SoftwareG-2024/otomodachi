@@ -12,7 +12,7 @@
     <h1>家計簿アプリ</h1>
     <form id="expense-form" method="post" action="php/data_entry.php">
         <label for="date">日付:</label>
-            <input type="date" id="date" name="date" value="<?php echo date('Y-m-j');?>" required><br>
+            <input type="date" id="date" name="date" value="<?php echo date('Y-m-j');?>" required min="" max="<?php echo date('Y-m-j');?>"><br>
         <label for="item">項目:</label>
             <select id="item" name="item" class="input">
                 <option value="0">支出</option>
@@ -28,7 +28,6 @@
     </form>
 
     <div id="expenses"></div>
-    <!-- <a href="page_display.php">データを表示</a> -->
     <script src="js/script.js"></script>
 
     <div class="button-group">

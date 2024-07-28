@@ -2,7 +2,7 @@ fetch('../php/get_data.php')
     .then(response => response.json())
     .then(data => {
         // 月の順にデータをソート
-        data.sort((a, b) => a.month - b.month);
+        data.sort((a, b) => new Date(a.month) - new Date(b.month));
 
         const ctx = document.getElementById('myChart').getContext('2d');
         new Chart(ctx, {
