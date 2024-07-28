@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>データ表示</title>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <link rel="stylesheet" type="text/css" href="../css/data_display.css">
+    <link rel="stylesheet" type="text/css" href="../css/button.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
     <h1>家計簿データ</h1>
-    <!-- ユーザーからの入力を受け取るフォームを追加します -->
     <form action="" method="post">
         <label for="year">年:</label>
         <input type="number" id="year" name="year" min="2000" max="2099" step="1" value="<?php echo date('Y'); ?>" required />
@@ -79,9 +80,9 @@
     <script src="../js/graph.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <div class='link'>
-        <a href='../page_entry.php'>データを入力する</a>
-        <a href='../index.html'>ホームへ戻る</a>
+    <div class='button-group'>
+        <button onclick="window.location.href='../page_entry.php';" class="button">データを入力する</button>
+        <button onclick="window.location.href='../index.html';" class="button">ホームへ戻る</button>
     </div>
 </body>
 </html>
