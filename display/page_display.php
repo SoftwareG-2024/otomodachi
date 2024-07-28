@@ -34,9 +34,7 @@
             echo "</pre>";
         }
     }
-    ?>
 
-    <?php
     $db = new SQLite3('../data/budget.db');
 
     $year = isset($_POST['year']) ? $_POST['year'] : date('Y');
