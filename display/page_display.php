@@ -59,7 +59,7 @@
             echo "<td class='id'>" . $row['id'] . "</td>";
             echo "<td class='date'>" . $row['date'] . "</td>";
             if ($row['item'] == 1) {
-                echo "<td class='income item'>" . "収入" . "</td>";
+                echo "<td class='income item'>" . "項目" . "</td>";
             } else if ($row['item'] == 0) {
                 echo "<td class='expense item'>" . "支出" . "</td>";
             } else {
