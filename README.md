@@ -1,7 +1,7 @@
 # otomodachi
 ## 環境構築(Windows)
 1. 公式サイトhttps://www.php.net/downloads.php からzipファイルをダウンロード
-2. zipファイルを解凍し，任意のフォルダにphpフォルダを保存する
+2. zipファイルを解凍し，任意のフォルダにphpフォルダを保存する ***この時，Cドライブに保存しないとデータベースの作成ができない***
 3. ダウンロードしたファイルから`php.ini`を開く  
    (ない場合は，`php.ini-development`をコピーして拡張子を`.ini`に変更)
 6. `php.ini`の中から`extension=pdo_sqlite`と`extension=sqlite3`の項目の`;`を消して保存する
